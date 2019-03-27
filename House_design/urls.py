@@ -16,9 +16,16 @@ Including another URLconf
 from django.conf.urls import url
 
 from . import views
+
 urlpatterns = [
-    url(r'^$',views.index),
-    url(r'^index/$',views.index),
-    url(r'^login/$',views.login),
-    url(r'^newuser/$',views.newuser),
+    url(r'^$', views.index),
+    url(r'^index/$', views.index),
+    url(r'^login/$', views.login),
+    url(r'^new_user/$', views.new_user),
+    url(r'^new_model/$', views.new_model),
+    url(r'^user_edit/(?P<id>[0-9]+)/$', views.user_edit),
+    url(r'^change_admin/(?P<id>[0-9]+)/$', views.change_admin),
+    url(r'^change_user/(?P<id>[0-9]+)/$', views.change_user),
+    url(r'user_delete/(?P<id>[0-9]+)/$', views.user_delete),
+
 ]
